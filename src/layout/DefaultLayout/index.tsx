@@ -6,9 +6,9 @@ import Sidebar from '@/layout/DefaultLayout/Sidebar';
 
 import styles from './DefaultLayout.module.scss';
 
-type Props = {
+interface Props {
   children: ReactElement;
-};
+}
 
 export default function DefaultLayout({ children }: Props) {
   return (

@@ -1,0 +1,16 @@
+.section {
+  padding: 32px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+
+  .cardsWrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, calc(100% / 5)));
+    gap: 32px;
+  }
+}
