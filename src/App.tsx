@@ -1,11 +1,13 @@
 import { useState } from 'react';
-
+import { useGetPostsQuery } from '@/services/posts.service';
 import logo from './logo.svg';
 
 import './App.css';
 
 function App() {
   const [count, setCount] = useState(0);
+  const { data, isError, isLoading, ...rest } = useGetPostsQuery();
+  console.log('🚀 ~ file: App.tsx ~ line 10 ~ App ~ data, error, isLoading', data, isError, isLoading, rest);
 
   return (
     <div className="App">

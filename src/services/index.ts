@@ -1,7 +1,7 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { postsApi } from './posts.service';
 
-// initialize an empty api service that we'll inject endpoints into later as needed
-export const emptySplitApi = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com/' }),
-  endpoints: () => ({}),
-});
+export const apiReducers = {
+  [postsApi.reducerPath]: postsApi.reducer,
+};
+
+export const apiMiddlewares = [postsApi.middleware];
