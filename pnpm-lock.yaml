@@ -32,6 +32,7 @@ specifiers:
   typescript: ^4.6.2
   vite: ^2.8.6
   vite-plugin-commonjs-externals: ^0.1.1
+  vite-plugin-environment: ^1.1.0
 
 dependencies:
   '@babel/core': 7.17.5
@@ -67,6 +68,7 @@ devDependencies:
   typescript: 4.6.2
   vite: 2.8.6
   vite-plugin-commonjs-externals: 0.1.1
+  vite-plugin-environment: 1.1.0_vite@2.8.6
 
 packages:
 
@@ -2686,6 +2688,14 @@ packages:
       acorn: 8.7.0
       es-module-lexer: 0.4.1
       magic-string: 0.25.9
+    dev: true
+
+  /vite-plugin-environment/1.1.0_vite@2.8.6:
+    resolution: {integrity: sha512-ay0vYB8DEB7xB5sqVzOgLyTaGH5jbnvghzoDBmHvMx2Y2k1WUl0QQUuyu7oeiKnmIJDc8ciklhVcGc4lXMKyiA==}
+    peerDependencies:
+      vite: ^2.7
+    dependencies:
+      vite: 2.8.6
     dev: true
 
   /vite/2.8.6:
