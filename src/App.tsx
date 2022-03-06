@@ -1,50 +1,35 @@
 import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+
+import DefaultLayout from '@/layout/DefaultLayout';
 import { useGetPostsQuery } from '@/services/posts.service';
-import logo from './logo.svg';
+import Dashboard from '@/views/Dashboard';
+import Users from '@/views/Users';
 
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
-  const { data, isError, isLoading, ...rest } = useGetPostsQuery(
-    {},
-    {
-      // pollingInterval: 1000,
-      // skip: false,
-      // refetchOnMountOrArgChange: true,
-      // refetchOnFocus: true,
-      // refetchOnReconnect: true,
-    }
-  );
+  // const [count, setCount] = useState(0);
+  // const { data, isError, isLoading, ...rest } = useGetPostsQuery(
+  //   {},
+  //   {
+  //     // pollingInterval: 1000,
+  //     // skip: false,
+  //     // refetchOnMountOrArgChange: true,
+  //     // refetchOnFocus: true,
+  //     // refetchOnReconnect: true,
+  //   }
+  // );
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount(count => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer">
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <main id="app">
+      <DefaultLayout>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/users" element={<Users />} />
+        </Routes>
+      </DefaultLayout>
+    </main>
   );
 }
 

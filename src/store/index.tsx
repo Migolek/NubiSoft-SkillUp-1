@@ -1,10 +1,9 @@
 import type { TypedUseSelectorHook } from 'react-redux';
 import { useDispatch, useSelector } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-
-import { postsApi } from '@/services/posts.service';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
-import { apiReducers, apiMiddlewares } from '@/services';
+
+import { apiMiddlewares, apiReducers } from '@/services';
 
 export const rootReducer = combineReducers({
   ...apiReducers,

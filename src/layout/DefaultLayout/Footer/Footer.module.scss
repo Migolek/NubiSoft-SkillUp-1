@@ -1,0 +1,15 @@
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $secondary;
+  height: 100%;
+  width: 100%;
+
+  .copyright {
+    margin: 0;
+    font-size: 14px;
+    color: $text;
+    font-weight: 500;
+  }
+}
