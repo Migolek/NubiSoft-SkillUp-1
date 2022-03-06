@@ -6,8 +6,16 @@ import './App.css';
 
 function App() {
   const [count, setCount] = useState(0);
-  const { data, isError, isLoading, ...rest } = useGetPostsQuery();
-  console.log('🚀 ~ file: App.tsx ~ line 10 ~ App ~ data, error, isLoading', data, isError, isLoading, rest);
+  const { data, isError, isLoading, ...rest } = useGetPostsQuery(
+    {},
+    {
+      // pollingInterval: 1000,
+      // skip: false,
+      // refetchOnMountOrArgChange: true,
+      // refetchOnFocus: true,
+      // refetchOnReconnect: true,
+    }
+  );
 
   return (
     <div className="App">
