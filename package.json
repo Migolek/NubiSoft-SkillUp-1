@@ -6,8 +6,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint --ext .js --ext .jsx --ignore-path .gitignore src",
-    "lint:fix": "eslint --fix --ext .js --ext .jsx --ignore-path .gitignore src",
+    "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx --ext .d.ts --ignore-path .gitignore src",
+    "lint:fix": "eslint --fix --ext .js --ext .jsx --ext .ts --ext .tsx --ext .d.ts --ignore-path .gitignore src",
     "format": "prettier --write \"**/*.+(js|jsx|json|sass|scss|css|md)\""
   },
   "dependencies": {
@@ -18,16 +18,19 @@
     "@mui/material": "^5.4.4",
     "@mui/types": "^7.1.2",
     "@reduxjs/toolkit": "^1.8.0",
-    "@types/react-redux": "^7.1.23",
     "axios": "^0.26.0",
+    "classnames": "^2.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-redux": "^7.2.6"
+    "react-redux": "^7.2.6",
+    "react-router-dom": "6"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.13",
+    "@types/react-redux": "^7.1.23",
+    "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
     "@vitejs/plugin-react": "^1.2.0",
@@ -41,6 +44,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "prettier": "^2.5.1",
+    "sass": "^1.49.9",
     "typescript": "^4.6.2",
     "vite": "^2.8.6",
     "vite-plugin-commonjs-externals": "^0.1.1",

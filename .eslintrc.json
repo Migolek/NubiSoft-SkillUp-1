@@ -9,9 +9,9 @@
     "plugin:import/typescript",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "eslint-import-resolver-typescript",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
@@ -28,12 +28,12 @@
       "version": "detect"
     },
     "import/parsers": {
-      "@typescript-eslint/parser": [".ts"]
+      "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts"]
     },
     "import/resolver": {
-      "import/resolver": {
-        "typescript": {} // this loads <rootdir>/tsconfig.json to eslint
-      }
+      "typescript": {
+        "alwaysTryTypes": true
+      } // this loads <rootdir>/tsconfig.json to eslint
       // "node": {
       //   "paths": ["src"],
       //   "extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"]
@@ -53,7 +53,8 @@
     "array-bracket-spacing": ["error", "never"],
     "block-spacing": ["error", "always"],
     "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
-    "comma-dangle": ["error", "always-multiline"],
+    "comma-dangle": ["error", "only-multiline"],
+    // "comma-dangle": ["error", "never"],
     "comma-spacing": ["error", { "before": false, "after": true }],
     "comma-style": ["error", "last"],
     "eol-last": ["error", "always"],
@@ -114,6 +115,7 @@
     "import/first": "error",
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
-    "import/named": "error"
+    "import/named": "off",
+    "@typescript-eslint/no-empty-interface": "off"
   }
 }

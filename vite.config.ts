@@ -1,8 +1,9 @@
 import path from 'path';
+
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 import commonjsExternals from 'vite-plugin-commonjs-externals';
 import EnvironmentPlugin from 'vite-plugin-environment';
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
 
 const modules = ['path'];
 
@@ -28,6 +29,18 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
+    },
+  },
+  css: {
+    modules: {
+      generateScopedName: '[name]__[local]___[hash:base64:5]',
+    },
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "./src/assets/scss/_variables.scss";
+        `,
+      },
     },
   },
 });
