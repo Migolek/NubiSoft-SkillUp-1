@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -29,8 +30,12 @@ export default function UserCard({ user }: Props) {
           <Typography variant="body2">{user.company.catchPhrase}</Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">Show albums</Button>
-          <Button size="small">Show posts</Button>
+          <NavLink className={styles.link} to={`/users/${user.id}/albums`}>
+            <Button variant="contained">Albums</Button>
+          </NavLink>
+          <NavLink className={styles.link} to={`/users/${user.id}/posts`}>
+            <Button variant="contained">Posts</Button>
+          </NavLink>
         </CardActions>
       </Card>
     </section>

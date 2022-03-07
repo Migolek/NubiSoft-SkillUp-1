@@ -8,7 +8,22 @@ import UserCard from './UserCard';
 import styles from './Users.module.scss';
 
 export default function Users() {
-  const { data = [], isFetching } = useGetUsersQuery({});
+  const {
+    data = [],
+    isFetching,
+    ...rest
+  } = useGetUsersQuery(
+    {}
+    //   {
+    //     // pollingInterval: 1000,
+    //     // skip: false,
+    //     // refetchOnMountOrArgChange: true,
+    //     // refetchOnFocus: true,
+    //     // refetchOnReconnect: true,
+    //   }
+  );
+
+  console.log('🚀 ~ file: index.tsx ~ line 12 ~ Users ~ rest', rest);
 
   return (
     <section className={styles.section}>

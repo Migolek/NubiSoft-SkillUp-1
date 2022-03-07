@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 import { Post } from '@/models/Post';
 
-interface PayloadGetPosts {}
+interface PayloadGetAllPosts {}
 
 interface PayloadCreatePost {
   title: string;
@@ -22,9 +22,10 @@ interface PayloadDeletePost {
 export const postsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.APP_API_BASE_URL }),
   tagTypes: ['Post'],
+  reducerPath: 'posts',
   endpoints: build => ({
-    getPosts: build.query<Post[], PayloadGetPosts>({
-      query: () => '/posts',
+    getAllPosts: build.query<Post[], PayloadGetAllPosts>({
+      query: () => `/posts`,
     }),
     createPost: build.mutation<Post, PayloadCreatePost>({
       query: post => ({
@@ -49,5 +50,5 @@ export const postsApi = createApi({
   }),
 });
 
-export const { useGetPostsQuery, useCreatePostMutation } = postsApi;
+export const { useGetAllPostsQuery, useCreatePostMutation } = postsApi;
 export const { reducerPath, reducer, middleware } = postsApi;
