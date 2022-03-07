@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 
 import { User } from '@/models/User';
 
+// import { usePrefetch } from '@/services/users.service';
 import styles from './UserCard.module.scss';
 
 interface Props {
@@ -14,6 +15,8 @@ interface Props {
 }
 
 export default function UserCard({ user }: Props) {
+  // const prefetchPosts = usePrefetch('getUserPosts');
+
   return (
     <section className={styles.section}>
       <Card>
@@ -30,6 +33,13 @@ export default function UserCard({ user }: Props) {
           <Typography variant="body2">{user.company.catchPhrase}</Typography>
         </CardContent>
         <CardActions>
+          {/* <NavLink
+            className={styles.link}
+            to={`/users/${user.id}/posts`}
+            onMouseEnter={() => prefetchPosts({ userId: user.id })}>
+            Prefetch posts
+          </NavLink> */}
+
           <NavLink className={styles.link} to={`/users/${user.id}/albums`}>
             <Button variant="contained">Albums</Button>
           </NavLink>

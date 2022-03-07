@@ -28,5 +28,5 @@ export const usersApi = createApi({
   }),
 });
 
-export const { useGetUsersQuery, useGetUserPostsQuery, useGetUserAlbumsQuery } = usersApi;
+export const { useGetUsersQuery, useGetUserPostsQuery, useGetUserAlbumsQuery, usePrefetch } = usersApi;
 export const { reducerPath, reducer, middleware } = usersApi;

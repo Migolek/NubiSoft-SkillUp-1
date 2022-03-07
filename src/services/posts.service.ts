@@ -19,18 +19,18 @@ interface PayloadDeletePost {
   id: number;
 }
 
-enum TAGS {
-  POST = 'Post',
-}
+// enum TAGS {
+//   POST = 'Post',
+// }
 
 export const postsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.APP_API_BASE_URL }),
-  tagTypes: [TAGS.POST],
+  // tagTypes: [TAGS.POST],
   reducerPath: 'api/posts',
   endpoints: build => ({
     getAllPosts: build.query<Post[], PayloadGetAllPosts>({
       query: () => `/posts`,
-      providesTags: [TAGS.POST],
+      // providesTags: [TAGS.POST],
     }),
     createPost: build.mutation<Post, PayloadCreatePost>({
       query: post => ({
