@@ -27,9 +27,9 @@ export default function Sidebar() {
           Posts
         </NavLink>
         <NavLink
-          to="/old-style"
+          to="/todos"
           className={({ isActive }) => (isActive ? classNames(styles.link, styles.active) : styles.link)}>
-          Old style RTK
+          Todos (RTK Slice)
         </NavLink>
       </div>
     </section>

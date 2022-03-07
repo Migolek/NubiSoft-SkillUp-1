@@ -10,9 +10,9 @@ import ListItemText from '@mui/material/ListItemText';
 import { useTypedDispatch, useTypedSelector } from '@/store';
 import { fetchTodos } from '@/store/todos.slice';
 
-import styles from './OldStyle.module.scss';
+import styles from './Todos.module.scss';
 
-export default function OldStyle() {
+export default function Todos() {
   const dispatch = useTypedDispatch();
   const todos = useTypedSelector(state => state.todos.data);
   const isFetching = useTypedSelector(state => state.todos.isFetching);

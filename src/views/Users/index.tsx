@@ -11,16 +11,17 @@ export default function Users() {
   const {
     data = [],
     isFetching,
+    // refetch,
     ...rest
   } = useGetUsersQuery(
-    {}
-    //   {
-    //     // pollingInterval: 1000,
-    //     // skip: false,
-    //     // refetchOnMountOrArgChange: true,
-    //     // refetchOnFocus: true,
-    //     // refetchOnReconnect: true,
-    //   }
+    {},
+    {
+      // pollingInterval: 1000,
+      // skip: true,
+      // refetchOnMountOrArgChange: true, // always fetch data on render
+      // refetchOnFocus: true,
+      // refetchOnReconnect: true,
+    }
   );
 
   //eslint-disable-next-line
@@ -28,6 +29,9 @@ export default function Users() {
 
   return (
     <section className={styles.section}>
+      {/* <button type="button" onClick={() => refetch()}>
+        Test refetch
+      </button> */}
       {isFetching ? (
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <CircularProgress />
