@@ -1,0 +1,21 @@
+.section {
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  flex-direction: column;
+
+  .addUserWrapper {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 32px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .postsWrapper {
+  }
+}

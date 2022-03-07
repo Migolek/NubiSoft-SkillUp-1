@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 
 import { useGetUsersQuery } from '@/services/users.service';
@@ -23,6 +23,7 @@ export default function Users() {
     //   }
   );
 
+  //eslint-disable-next-line
   console.log('🚀 ~ file: index.tsx ~ line 12 ~ Users ~ rest', rest);
 
   return (

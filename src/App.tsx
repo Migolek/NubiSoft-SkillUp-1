@@ -5,6 +5,7 @@ import Dashboard from '@/views/Dashboard';
 import Users from '@/views/Users';
 
 import OldStyle from './views/OldStyle';
+import Posts from './views/Posts';
 import UserAlbums from './views/UserAlbums';
 import UserPosts from './views/UserPosts';
 
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/posts" element={<Posts />} />
           <Route path="/users/:userId/posts" element={<UserPosts />} />
           <Route path="/users/:userId/albums" element={<UserAlbums />} />
           <Route path="/old-style" element={<OldStyle />} />

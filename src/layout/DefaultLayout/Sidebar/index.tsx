@@ -22,6 +22,11 @@ export default function Sidebar() {
           Users
         </NavLink>
         <NavLink
+          to="/posts"
+          className={({ isActive }) => (isActive ? classNames(styles.link, styles.active) : styles.link)}>
+          Posts
+        </NavLink>
+        <NavLink
           to="/old-style"
           className={({ isActive }) => (isActive ? classNames(styles.link, styles.active) : styles.link)}>
           Old style RTK
