@@ -13,7 +13,7 @@ interface PayloadGetUserData {
 export const usersApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.APP_API_BASE_URL }),
   tagTypes: ['User'],
-  reducerPath: 'users',
+  reducerPath: 'api/users',
   endpoints: build => ({
     getUsers: build.query<User[], PayloadGetUsers>({
       query: () => `/users`,

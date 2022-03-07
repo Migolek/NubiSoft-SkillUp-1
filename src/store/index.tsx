@@ -4,9 +4,15 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
 
 import { apiMiddlewares, apiReducers } from '@/services';
+import todos from '@/store/todos.slice';
+
+const storeReducers = {
+  todos,
+};
 
 export const rootReducer = combineReducers({
   ...apiReducers,
+  ...storeReducers,
 });
 
 const store = configureStore({

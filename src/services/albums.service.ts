@@ -11,7 +11,7 @@ interface PayloadGetAlbumPhotos {
 export const albumsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.APP_API_BASE_URL }),
   tagTypes: ['Album'],
-  reducerPath: 'albums',
+  reducerPath: 'api/albums',
   endpoints: build => ({
     getAlbums: build.query<Album[], PayloadGetAlbums>({
       query: () => `/albums`,

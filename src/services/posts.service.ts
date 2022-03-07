@@ -22,7 +22,7 @@ interface PayloadDeletePost {
 export const postsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.APP_API_BASE_URL }),
   tagTypes: ['Post'],
-  reducerPath: 'posts',
+  reducerPath: 'api/posts',
   endpoints: build => ({
     getAllPosts: build.query<Post[], PayloadGetAllPosts>({
       query: () => `/posts`,
