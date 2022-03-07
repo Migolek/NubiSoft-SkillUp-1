@@ -11,6 +11,7 @@ export default function Users() {
   const {
     data = [],
     isFetching,
+    // isLoading, only for first fetch data
     // refetch,
     ...rest
   } = useGetUsersQuery(
