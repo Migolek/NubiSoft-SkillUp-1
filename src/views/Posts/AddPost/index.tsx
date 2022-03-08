@@ -45,7 +45,7 @@ export default function AddPost({ close }: Props) {
   return (
     <section className={styles.section}>
       <p className={styles.title}>Add new post</p>
-      <SelectUser userId={formData.userId} handleSelect={handleSelectUser} />
+      <SelectUser userId={String(formData.userId)} handleSelect={handleSelectUser} />
       <TextField
         required
         id="outlined-required"

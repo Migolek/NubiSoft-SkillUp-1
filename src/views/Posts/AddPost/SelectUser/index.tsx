@@ -9,7 +9,7 @@ import { useGetUsersQuery } from '@/services/users.service';
 import styles from './SelectUser.module.scss';
 
 interface Props {
-  userId: number;
+  userId: string;
   handleSelect: (event: SelectChangeEvent) => void;
 }
 
@@ -28,14 +28,16 @@ export default function SelectUser({ userId, handleSelect }: Props) {
     <section className={styles.section}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">User</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={String(userId)}
-          label="User"
-          onChange={handleSelect}>
-          {renderOptions()}
-        </Select>
+        {!isFetching && (
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={userId}
+            label="User"
+            onChange={handleSelect}>
+            {renderOptions()}
+          </Select>
+        )}
       </FormControl>
       {isFetching && <CircularProgress />}
     </section>
