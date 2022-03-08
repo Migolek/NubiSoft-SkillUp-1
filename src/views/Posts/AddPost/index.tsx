@@ -19,7 +19,7 @@ interface PostForm {
 }
 
 export default function AddPost({ close }: Props) {
-  const [formData, setFormData] = useState<PostForm>({ userId: 0, title: '', body: '' });
+  const [formData, setFormData] = useState<PostForm>({ userId: 1, title: '', body: '' });
   const [createPost] = useCreatePostMutation();
 
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>, stateName: string) => {
@@ -32,6 +32,13 @@ export default function AddPost({ close }: Props) {
 
   const handleSavePost = () => {
     createPost(formData);
+
+    //eslint-disable-next-line
+    // createPost(formData)
+    //   .unwrap()
+    //   .then(response => console.log('Success:', response)) //eslint-disable-line
+    //   .catch(error => console.error('Error:', error)); //eslint-disable-line
+
     close();
   };
 

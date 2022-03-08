@@ -16,7 +16,7 @@ interface Props {
 
 export default function SelectAlbum({ selectedAlbum, handleSelect }: Props) {
   const { userId } = useParams();
-  const { data = [], isFetching } = useGetUserAlbumsQuery({ userId: Number(userId) });
+  const { data = [], isFetching } = useGetUserAlbumsQuery(Number(userId));
 
   const renderOptions = () => {
     return data.map(album => (

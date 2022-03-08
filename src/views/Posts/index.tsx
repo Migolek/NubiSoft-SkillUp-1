@@ -16,7 +16,7 @@ export default function Posts() {
     setExpanded(isExpanded ? postId : null);
   };
 
-  const { data = [], isFetching } = useGetAllPostsQuery({});
+  const { data = [], isFetching } = useGetAllPostsQuery();
 
   return (
     <section className={styles.section}>

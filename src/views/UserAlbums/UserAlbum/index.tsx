@@ -11,7 +11,7 @@ interface Props {
 }
 
 export default function UserAlbum({ albumId }: Props) {
-  const { data = [], isFetching } = useGetAlbumPhotosQuery({ albumId: Number(albumId) });
+  const { data = [], isFetching } = useGetAlbumPhotosQuery(Number(albumId));
 
   return (
     <section className={styles.section}>

@@ -4,26 +4,20 @@ import { Album } from '@/models/Album';
 import { Post } from '@/models/Post';
 import { User } from '@/models/User';
 
-interface PayloadGetUsers {}
-
-interface PayloadGetUserData {
-  userId: number;
-}
-
 export const usersApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.APP_API_BASE_URL }),
   tagTypes: ['User'],
   reducerPath: 'api/users',
   endpoints: build => ({
-    getUsers: build.query<User[], PayloadGetUsers>({
+    getUsers: build.query<User[], void>({
       query: () => `/users`,
       keepUnusedDataFor: 5, // default is 60 seconds
     }),
-    getUserPosts: build.query<Post[], PayloadGetUserData>({
-      query: ({ userId }) => `/users/${userId}/posts`,
+    getUserPosts: build.query<Post[], number>({
+      query: userId => `/users/${userId}/posts`,
     }),
-    getUserAlbums: build.query<Album[], PayloadGetUserData>({
-      query: ({ userId }) => `/users/${userId}/albums`,
+    getUserAlbums: build.query<Album[], number>({
+      query: userId => `/users/${userId}/albums`,
     }),
   }),
 });

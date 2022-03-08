@@ -14,7 +14,7 @@ interface Props {
 }
 
 export default function SelectUser({ userId, handleSelect }: Props) {
-  const { data = [], isFetching } = useGetUsersQuery({});
+  const { data = [], isFetching } = useGetUsersQuery();
 
   const renderOptions = () => {
     return data.map(user => (
