@@ -40,6 +40,9 @@ export const postsApi = createApi({
       }),
       // AUTO REFETCH DATA
       // invalidatesTags: [TAGS.POST],
+
+      // TANFORM RESPONSE
+      // transformResponse: (response: { data: Post }, meta, arg) => response.data,
     }),
     updatePost: build.mutation<Post, PayloadUpdatePost>({
       query: ({ id, post }) => ({
